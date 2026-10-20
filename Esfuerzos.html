@@ -21780,6 +21780,36 @@ Mh.createRoot(document.getElementById("root")).render(
 .rea-tensor-unit{font-family:system-ui,sans-serif;font-size:13px}
 @media(max-width:640px){.rea-tensor-matrix{gap:6px}.rea-tensor-brackets{gap:7px 7px;padding:6px 8px;grid-template-columns:repeat(3,minmax(26px,auto))}}
 </style>
+
+<style id="rea-memory-layout-github-fix">
+/* Distribucion estable en GitHub Pages y en archivos locales: 1-2 / 3-4 / 5.
+   Se coloca al final del head para prevalecer sobre las reglas anteriores. */
+.rea-memoria .rea-memory-panels {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.rea-memoria .rea-memory-panels > .rea-eq-panel {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: auto !important;
+  grid-column: auto !important;
+  box-sizing: border-box !important;
+}
+.rea-memoria .rea-memory-panels > .rea-eq-panel:nth-child(5) {
+  grid-column: 1 / -1 !important;
+}
+.rea-memoria .rea-eq-line,
+.rea-memoria .rea-eq-expression,
+.rea-memoria .rea-eq-result { min-width: 0 !important; max-width: 100% !important; }
+@media (max-width: 780px) {
+  .rea-memoria .rea-memory-panels { grid-template-columns: minmax(0, 1fr) !important; }
+  .rea-memoria .rea-memory-panels > .rea-eq-panel:nth-child(5) { grid-column: auto !important; }
+}
+</style>
 </head>
 <body class="bg-[#EEF2F6] text-[#0F2438]">
 <div id="root"></div>
